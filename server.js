@@ -10,10 +10,10 @@ var bodyParser = require("body-parser");
 var expressSession = require("express-session");
 var bcrypt = require("bcryptjs");
 const { getVideoDurationInSeconds } = require("get-video-duration");
+var port = process.env.PORT || 3000;
 
-var nodemailer = require("nodemailer");
 
-var mainURL = "http://localhost:3000";
+var mainURL = "mongodb+srv://dhaval_changani:humble1234@cluster0.6nbuz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -49,22 +49,22 @@ function getUser(userId, callBack) {
   );
 }
 
-http.listen(3000, function () {
-  console.log("Server started at http://localhost:3000/");
+http.listen(port, function () {
+  console.log(`Server started at http://localhost:${port}/`);
 
   socketIO.on("connection", function (socket) {
     //
   });
 
   mongoClient.connect(
-    "mongodb://localhost:27017",
+    mainURL,
     { useUnifiedTopology: true },
     function (error, client) {
       if (error) {
         console.log(error);
         return;
       }
-      database = client.db("youtube");
+      database = client.db("videostream");
 
       app.get("/", function (request, result) {
         database
