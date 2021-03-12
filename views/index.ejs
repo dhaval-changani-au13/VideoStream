@@ -1,0 +1,30 @@
+<%- include ("includes/header") %>
+
+   <div class="videoSection">
+      <% videos.forEach(function (video) { %>
+         <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="video-card">
+               <img class="card-img" src="<%= video.thumbnail %>" alt="thumbnail" width="100%" height="30%">
+               <div class="time" style="color: aliceblue;">
+                  <%= video.minutes + ":" + video.seconds %>
+               </div>
+               <div class="video-title">
+                  <a href="watch?v=<%= video.watch %>">
+                     <%= video.title %>
+                  </a>
+               </div>
+               <div class="video-page text-success">
+                  <%= video.category %>
+               </div>
+               <div class="video-view" style="color: aliceblue;">
+                  <%= video.views %> views &nbsp;<i class="fas fa-calendar-alt"></i>
+                     <% var createdAt=new Date(video.createdAt); var date=createdAt.getDate() + "" ; %>
+                        <%= date.padStart(2, "0" ) + " " + months[createdAt.getMonth()] + ", " + createdAt.getFullYear()
+                           %>
+               </div>
+            </div>
+         </div>
+         <% }) %>
+   </div>
+
+<%- include ("includes/footer") %>

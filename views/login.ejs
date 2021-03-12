@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="public/css/register.css" rel="stylesheet" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="column design">
+        <img src="public/img/register.svg" class="img-fluid" alt="google" />
+      </div>
+      <div class="column bg-alt loginDiv">
+        <div class="container">
+          <div class="row mx-auto align-middle">
+            <div class="form-group">
+              <div class="userExist">
+                <span
+                  >Not a member? <a class="login" style="color: #ffe032" href="/register"
+                    >Sign up</a
+                  ></span
+                >
+              </div>
+            </div>
+
+            <% if (message != "") { %>
+              <div class="alert alert-success">
+                 <%= message %>
+              </div>
+           <% } %>
+
+           <% if (error != "") { %>
+              <div class="alert alert-danger">
+                 <%= error %>
+              </div>
+           <% } %>
+
+            <form action="/login" method="POST">
+              <br />
+              <h2 style="margin-left: 82px; margin-bottom: 30px">Sign in</h2>
+              <div class="form-group">
+                <div class="row justify-content-center">
+                  <div class="col-9 mx-auto">
+                    <label for="email">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      autocomplete="on"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row justify-content-center">
+                  <div class="col-9 mx-auto">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      id="password"
+                    />
+                    <span
+                      class="fa fa-eye eye"
+                      style="
+                        display: inline-block;
+                        margin-top: -2.65%;
+                        margin-left: 35% !important;
+                        z-index: 9999;
+                        position: absolute;
+                      "
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="btn btn-default"
+                type="submit"
+                style="background-color: #ffe032; width: 30%; margin-left: 85px"
+              >
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

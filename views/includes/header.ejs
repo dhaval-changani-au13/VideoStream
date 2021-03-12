@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="/public/css/style.css  ">
+  <title>Dashboard</title>
+</head>
+
+<% mainURL="http://localhost:3000" %>
+  <script>
+    var mainURL = "http://localhost:3000";
+  </script>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="firstSec">
+        <div class="hamb">
+          <span class="fa fa-bars" style="color: #dedede; font-size: 23px;" aria-hidden="true"></span>
+        </div>
+        <div class="brand" style="display:flex; padding-top: 5px; box-sizing: border-box;">
+          <a class="navbar-brand" href="#" style="color: #ffffff;">
+            <img src="/public/img/video-icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            &nbsp;Videostream
+          </a>
+        </div>
+      </div>
+      <div class="middleSec">
+        <form method="GET" action="/search">
+          <input type="search" autocomplete="off" placeholder="search for..." id="form1" class="search-input">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+      <div class="endSec">
+        <ul class="endList" style="padding-top: 5px;">
+          <% if (isLogin) { %>
+            <li class="">
+              <a class="nav-link" href="/public/img/upload" style="color: #dedede;">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                Upload Video
+              </a>
+            </li>
+            <li class="userDropdown">
+              <a class="nav-link dropdown-tog user-dropdown-link" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #dedede;">
+                <img alt="Avatar" id="my-profile-picture" style="object-fit: cover;"
+                  onerror="this.src = 'user_placeholder.jpg'">
+                <span id="username"></span>
+              </a>
+              <ul class="dropdown">
+                <li><a href="/my_channel"><i class="fa fa-user" aria-hidden="true"></i>&nbsp; My Channel</a></li>
+                <li><a href="/my_settings"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp; Setting</a></li>
+                <hr>
+                <li><a href="/logout" data-toggle="modal" data-target="#logoutModal"><i class="fa fa-sign-out"
+                      aria-hidden="true"></i>&nbsp; Logout</a></li>
+              </ul>
+            </li>
+            <% } else { %>
+
+              <li class="">
+                <a class="nav-link" href="/login" style="color: #dedede">
+                  <i aria-hidden="true"></i>
+                  Login
+                </a>
+              </li>
+
+              <li class="">
+                <a class="nav-link" href="/register" style="color: #dedede">
+                  <iaria-hidden="true"></i>
+                    Register
+                </a>
+              </li>
+
+              <% } %>
+        </ul>
+      </div>
+    </nav>
+
+    <% months=["January", "February" , "March" , "April" , "May" , "June" , "July" , "August" , "September" , "October"
+      , "November" , "December" ]; %>
+
+      <script type="text/javascript">
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+      </script>
+
+      <div class="main-content">
+        <div class="sidebar">
+          <ul class="sideNav">
+            <li class="sideNav_item">
+              <img src="/public/img/Home.svg" alt="Home" style="width: 25px; height: 25px;">
+              <a href="#">Home</a>
+            </li>
+            <li class="sideNav_item">
+              <img src="/public/img/Trending.svg" alt="Trending" style="width: 25px; height: 25px;">
+              <a href="#">Trending</a>
+            </li>
+            <li class="sideNav_item">
+              <img src="/public/img/Library.svg" alt="Library" style="width: 25px; height: 25px;">
+              <a href="#">Library</a>
+            </li>
+          </ul>
+        </div>
