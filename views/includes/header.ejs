@@ -27,7 +27,7 @@
           <span class="fa fa-bars" style="color: #dedede; font-size: 23px;" aria-hidden="true"></span>
         </div>
         <div class="brand" style="display:flex; padding-top: 5px; box-sizing: border-box;">
-          <a class="navbar-brand" href="#" style="color: #ffffff;">
+          <a class="navbar-brand" href="/" style="color: #ffffff;">
             <img src="/public/img/video-icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
             &nbsp;Videostream
           </a>
@@ -45,7 +45,7 @@
         <ul class="endList" style="padding-top: 5px;">
           <% if (isLogin) { %>
             <li class="">
-              <a class="nav-link" href="/public/img/upload" style="color: #dedede;">
+              <a class="nav-link" href="/upload" style="color: #dedede;">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 Upload Video
               </a>
@@ -53,8 +53,9 @@
             <li class="userDropdown">
               <a class="nav-link dropdown-tog user-dropdown-link" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #dedede;">
-                <img alt="Avatar" id="my-profile-picture" style="object-fit: cover;"
-                  onerror="this.src = 'user_placeholder.jpg'">
+                Settings 
+                <!-- <img alt="Avatar" id="my-profile-picture" style="object-fit: cover;"
+                  onerror="this.src = 'user_placeholder.jpg'"> -->
                 <span id="username"></span>
               </a>
               <ul class="dropdown">
@@ -111,15 +112,15 @@
           <ul class="sideNav">
             <li class="sideNav_item">
               <img src="/public/img/Home.svg" alt="Home" style="width: 25px; height: 25px;">
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li class="sideNav_item">
               <img src="/public/img/Trending.svg" alt="Trending" style="width: 25px; height: 25px;">
-              <a href="#">Trending</a>
+              <a href="/">Trending</a>
             </li>
             <li class="sideNav_item">
               <img src="/public/img/Library.svg" alt="Library" style="width: 25px; height: 25px;">
-              <a href="#">Library</a>
+              <a href="/">Library</a>
             </li>
           </ul>
         </div>

@@ -12,8 +12,8 @@ var bcrypt = require("bcryptjs");
 const { getVideoDurationInSeconds } = require("get-video-duration");
 var port = process.env.PORT || 3000;
 
-
-var mainURL = "mongodb+srv://dhaval_changani:humble1234@cluster0.6nbuz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var mainURL =
+  "mongodb+srv://dhaval_changani:humble1234@cluster0.6nbuz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -137,7 +137,7 @@ http.listen(port, function () {
                     }
 
                     result.render("register", {
-						message: "Signed up successfully. You can login now.",
+                      message: "Signed up successfully. You can login now.",
                     });
                   }
                 );
@@ -672,22 +672,6 @@ http.listen(port, function () {
         }
       });
 
-      app.post("/do-like", function (request, result) {
-        result.json({
-          status: "success",
-          message:
-            "Like/dislike feature is in premium version. Kindly read README.txt to get full version.",
-        });
-      });
-
-      app.post("/do-dislike", function (request, result) {
-        result.json({
-          status: "success",
-          message:
-            "Like/dislike is in premium version. Kindly read README.txt to get full version.",
-        });
-      });
-
       app.post("/do-comment", function (request, result) {
         if (request.session.user_id) {
           var comment = request.body.comment;
@@ -939,13 +923,6 @@ http.listen(port, function () {
         }
       });
 
-      app.post("/update-social-media-link", function (request, result) {
-        result.json({
-          status: "success",
-          message: "Video has been liked",
-        });
-      });
-
       app.get("/delete-video", function (request, result) {
         if (request.session.user_id) {
           database.collection("videos").findOne(
@@ -1006,7 +983,7 @@ http.listen(port, function () {
                   },
                   function (error2, data) {
                     result.redirect(
-                      "/my_videos?message=Video+has+been+deleted"
+                      "/"
                     );
                   }
                 );
@@ -1017,13 +994,6 @@ http.listen(port, function () {
           result.redirect("/login");
         }
       });
-
-      app.get("/pro-version", function (request, result) {
-        result.render("pro-version", {
-          isLogin: request.session.user_id ? true : false,
-          url: request.url,
-        });
-      });
     }
-  ); // end of Mongo DB
-}); //  end of HTTP.listen
+  ); 
+});
