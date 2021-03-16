@@ -23,61 +23,66 @@
         <div class="alert alert-success">
           <%= message %>
         </div>
-        <% } %>
+        <% } else{ %>
           <% if (error !="" ) { %>
             <div class="alert alert-danger">
               <%= error %>
             </div>
             <% } %>
+              <% } %>
 
-              <form action="/register" method="POST">
-                <div class="form-group">
-                  <div class="userExist">
-                    <span>Already an user? <a class="login" style="color: #ffe032" href="/login">Login</a></span>
-                  </div>
-                </div>
-                <br />
-                <h2 style="margin-left: 58px">Sign up</h2>
-                <br />
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-sm-5 form-group">
-                      <label for="firstName">First Name</label>
-                      <input type="text" class="form-control" name="first_name" id="first_name" />
-                    </div>
-                    <div class="col-sm-5 form-group">
-                      <label for="lastName">Last Name</label>
-                      <input type="text" class="form-control" name="last_name" id="last_name" />
+                <form action="/register" method="POST">
+                  <div class="form-group">
+                    <div class="userExist">
+                      <span>Already an user? <a class="login" style="color: #ffe032" href="/login">Login</a></span>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-10 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" name="email" id="email" />
+                  <br />
+                  <h2 style="margin-left: 58px">Sign up</h2>
+                  <br />
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-5 form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" name="first_name" id="first_name" />
+                      </div>
+                      <div class="col-sm-5 form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" name="last_name" id="last_name" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10 form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10 form-group">
+                        <label for="passsword">Password</label>
+                        <input type="password" class="form-control" placeholder="6+ characters" name="password"
+                          id="password" />
+                      </div>
+                    </div>
+                    <div class="form-check" style="margin-left: 60px; margin-top: 20px">
+                      <div class="col-sm-10">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">I agree
+                          <span style="color: #ffe032">terms & conditions</span></label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn" style="background-color: #ffe032">
+                      Create Account
+                    </button>
+                    <div class="form-group">
+                      <div class="userExist">
+                        <a class="login" style="color: #ffe032" href="/">Go to Home</a>
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-10 form-group">
-                      <label for="passsword">Password</label>
-                      <input type="password" class="form-control" placeholder="6+ characters" name="password"
-                        id="password" />
-                    </div>
-                  </div>
-                  <div class="form-check" style="margin-left: 60px; margin-top: 20px">
-                    <div class="col-sm-10">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label class="form-check-label" for="flexCheckDefault">I agree
-                        <span style="color: #ffe032">terms & conditions</span></label>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn" style="background-color: #ffe032" >
-                    Create Account
-                  </button>
-                  <button class="btn" style="background-color: #ffe032; width: 35%"
-                    onclick="window.location.href='/'">Home
-                  </button>
-                </div>
-              </form>
+
+                </form>
+
     </div>
   </div>
 </body>
